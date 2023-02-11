@@ -1,0 +1,130 @@
+
+#calculator {  
+  background-color: gray;
+  padding: 10px;
+  width: 500px;
+  height: 700px;
+  margin:auto;
+  margin-top: 100px;
+  display: grid;
+  outline: solid black 5px;
+  border-radius: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "display display display display"
+    "clearAll clearAll divide times"
+    "seven eight nine minus"
+    "four five six add"
+    "one two three equal"
+    "zero zero decimal equal";
+  grid-area: calculator;
+
+#zero { grid-area: zero;}
+#decimal {grid-area: decimal; }
+#equals {grid-area: equal; }
+#one {grid-area: one; }
+#two {grid-area: two; }
+#three {grid-area: three; }
+#four {grid-area: four; }
+#five { grid-area: five; }
+#six { grid-area: six; }
+#seven {grid-area: seven; }
+#eight { grid-area: eight;}
+#nine { grid-area: nine;}
+#subtract { grid-area: minus;}
+#add { grid-area: add;}
+#multiply {grid-area: times;}
+#divide { grid-area: divide;}
+#clear {grid-area: clearAll;}
+
+#displayBox { 
+  outline: 1px black solid;
+  background-color: black;
+  border-radius: 20px;
+  padding:10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "formula"
+    "output";
+  grid-area: display;
+  .formula { grid-area: formula; }
+output { grid-area: output; }
+  }
+}
+
+
+.formula, .output {
+  display: flex;
+flex-direction: row-reverse ;
+flex-wrap: wrap-reverse; 
+font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.formula {
+  color: orange;
+  background-color: black;
+  border: none;
+}
+.output {
+  color: white;
+}
+
+#zero, #decimal, #equals,
+#one, #two, #three, 
+#four, #five, #six,
+#add, #seven, #eight,
+#nine, #subtract, #clear,
+#divide, #multiply {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 20px;
+  outline: 1px black solid;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size:2rem;
+  color: white;
+
+  &:hover {
+    opacity: 80%;
+    color: black;
+  }
+}
+
+
+
+#clear {
+  background-color: rgb(201, 9, 9);
+}
+#equals {
+  background-color: rgb(9, 111, 201);
+}
+#divide, #multiply,
+#subtract, #add {
+  background-color: rgb(201, 137, 9);
+}
+
+#zero, #decimal, #one,
+#two, #three, #four, 
+#five, #six, #seven, 
+#eight, #nine {
+  background-color: rgb(52, 53, 52);
+}
+
+@media screen and (max-width: 650px) {
+  #calculator {
+      transform: scale(0.7);
+      width: 100vw;
+    }
+  }
